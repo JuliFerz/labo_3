@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>PP_Vehiculos</title>
+</head>
+
+<body>
+    <div id="divDatos">
+        <form id="formDatos">
+            <span>Form Datos</span><br>
+            <span>Filtrar Por: </span>
+            <select id="filtroDatos">
+                <option value="todos" selected>Todos</option>
+                <option value="aereo">Aereos</option>
+                <option value="terrestre">Terrestres</option>
+            </select><br>
+
+            <span>Mostrar Columnas:</span><br>
+            <span>ID</span><input type="checkbox" name="toggleColumn" id="id" checked>
+            <span>Modelo</span><input type="checkbox" name="toggleColumn" id="modelo" checked>
+            <span>Año fab.</span><input type="checkbox" name="toggleColumn" id="anoFab" checked>
+            <span>Vel. max</span><input type="checkbox" name="toggleColumn" id="velMax" checked>
+            <span>Alt. max</span><input type="checkbox" name="toggleColumn" id="altMax" checked>
+            <span>Autonomia</span><input type="checkbox" name="toggleColumn" id="autonomia" checked>
+            <span>Cant. pue.</span><input type="checkbox" name="toggleColumn" id="cantPue" checked>
+            <span>Cant. rue</span><input type="checkbox" name="toggleColumn" id="cantRue" checked>
+            <br>
+
+            <span>Promedio Velocidad Máxima: </span>
+            <input type="text" id="velocidadMaximaPromedio" placeholder="Haga click en Calcular..." class="blocked">
+            <button type="button" id="btnCalcularPromedioVelMax">Calcular</button><br>
+
+            <table border="1" id="tablaVehiculos">
+                <thead id="headVehiculos">
+                    <tr>
+                        <th class="id sort"><button type="button" id="sortId">ID</button></th>
+                        <th class="modelo sort"><button type="button" id="sortNombre">Modelo</button></th>
+                        <th class="anoFab sort"><button type="button" id="sortApellido">Año fab.</button></th>
+                        <th class="velMax sort"><button type="button" id="sortEdad">Vel. max</button></th>
+                        <th class="altMax sort"><button type="button" id="sortCompras">Alt. max</button></th>
+                        <th class="autonomia sort"><button type="button" id="sortTelefono">Autonomia</button></th>
+                        <th class="cantPue sort"><button type="button" id="sortSueldo">Cant. pue.</button></th>
+                        <th class="cantRue sort"><button type="button" id="sortVentas">Cant. rue</button></th>
+                    </tr>
+                </thead>
+                <tbody id="bodyVehiculos"></tbody>
+            </table>
+            <button type="button" id="agregarVehiculo">Agregar</button>
+        </form>
+
+        <form class="hidden" id="formAbm">
+            <h1>Formulario ABM</h1>
+            <span>Tipo: </span>
+            <select id="tipoVehiculoABM">
+                <option value=""></option>
+                <option value="aereo" id="opcionAereo">Aereo</option>
+                <option value="terrestre" id="opcionTerrestre">Terrestre</option>
+            </select><br>
+
+            <div class="abmVehiculo hidden">
+                <span>ID: </span>
+                <input type="number" class="abmDato" id="idAbm" value=""><br>
+
+                <span>Modelo: </span>
+                <input type="text" class="abmDato" id="modeloAbm" value=""><br>
+
+                <span>Año Fabricación: </span>
+                <input type="number" class="abmDato" id="anoFabAbm" value=""><br>
+
+                <span>Velocidad Máxima: </span>
+                <input type="number" class="abmDato" id="velMaxAbm" value=""><br>
+            </div>
+
+            <div class="aereo hidden">
+                <span>Altura Máxima: </span>
+                <input type="number" class="abmDato" id="altMaxAbm" value=""><br>
+
+                <span>Autonomía: </span>
+                <input type="number" class="abmDato" id="autonomiaAbm" value=""><br>
+            </div>
+
+            <div class="terrestre hidden">
+                <span>Cantidad Puertas: </span>
+                <input type="number" class="abmDato" id="cantPueAbm" value=""><br>
+
+                <span>Cantidad Ruedas: </span>
+                <input type="number" class="abmDato" id="cantRueAbm" value=""><br>
+            </div>
+            <div class="abmTextoDefault">
+                <br>
+                <span>Elija un tipo...</span>
+            </div>
+            <button type="button" value="editar" id="editarAbm" class="hidden">Editar</button>
+            <button type="submit" value="aceptar" id="aceptarAbm">Aceptar</button>
+            <button type="button" value="eliminar" id="eliminarAbm" class="hidden">Eliminar</button>
+            <button type="button" value="cancelar" id="cancelarAbm">Cancelar</button>
+
+        </form>
+    </div>
+    <script type="module" src="js/main.js" defer></script>
+</body>
+
+</html>

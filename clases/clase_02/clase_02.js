@@ -1,0 +1,103 @@
+function $(id) {
+    return document.getElementById(id);
+}
+
+
+let tabla = $("tabla");
+
+/**** ENCABEZADO ****/
+let secEncabezado = document.createElement("thead"); // tenemos el elemento, pero aún no está en el DOM, no existe
+let filaEncabezado = document.createElement("tr");
+let celda1 = document.createElement("th");
+let texto1 = document.createTextNode("Nombre"); // se pasa el string que querramos
+/*
+    En una práctica real, el texto de un textNode puede venir de otro lado. 
+    El texto de TextNode SIEMPRE se crea como texto plano, por un tema de seguridad (por ejemplo si le pasamos un link).
+    No se usa innerText porque no hace texto plano, es decir, se le puede inyectar links, cosas maliciosas.
+*/
+let celda2 = document.createElement("th");
+let texto2 = document.createTextNode("Apellido"); // se pasa el string que querramos
+
+tabla.appendChild(secEncabezado); // se agrega al elemento un nodo hijo (se agrega al dom como hijo de <table>). Esta función recibe un nodo
+secEncabezado.appendChild(filaEncabezado);
+filaEncabezado.appendChild(celda1);
+
+celda1.appendChild(texto1);
+
+filaEncabezado.appendChild(celda2); // append -> Se appendiza al final
+
+celda2.appendChild(texto2);
+
+
+/**** CUERPO ****/
+let tbody = document.createElement("tbody");
+let trBody = document.createElement("tr");
+// let data1 = document.createElement("td");
+
+tabla.appendChild(tbody);
+tbody.appendChild(trBody);
+
+// forma mas resumida
+// tbody.appendChild((document.createElement("td").appendChild(document.createTextNode("Julian"))));
+
+let celda3 = document.createElement("td");
+
+trBody.appendChild(celda3);
+
+let nombre = document.createTextNode("Julian");
+
+celda3.appendChild(nombre);
+
+let celda4 = document.createElement("td");
+
+trBody.appendChild(celda4);
+
+let apellido = document.createTextNode("Fernandez");
+
+celda4.appendChild(apellido);
+
+
+// document.getElementById("tabla"). // VScode sabe que es un elemento HTML, por lo que sugiere métodos despues del "."
+// $("tabla"). // VSCode también sabe que esto va a ser un elemento HTML, por lo que también sugiere los métodos
+
+// Remover nodo hijo de un elemento padre
+// Esta función remueve TODOS los nodos hijos
+// e.g. si le paso $("tabla"), elimina hasta las columnas
+function Vaciar(elemento){
+    while(elemento.hasChildNodes()){ // mientras tenga nodos hijos
+        elemento.removeChild(elemento.lastChild); // eliminar del padre el último elemento insertado
+    }
+}
+
+/* function Vaciar2(elmento) {
+    elemento. // Aca VSCode NO entiende que esto va a ser un elemento HTML, por lo que no puede sugerir métodos despues del "."
+              // Se debe escribir a mano los métodos
+} */
+
+
+//////////// Métodos con ATRIBUTOS
+// BUSCAR
+console.log($("tabla").hasAttribute("id")); // true -> busca si tiene el atributo
+console.log($("tabla").hasAttribute("idddd")); // false
+console.log($("tabla").getAttribute("id")); // mostrar el valor del atributo "id" del elemento tabla
+console.log($("tabla").getAttribute("attrQueNoExiste")); // Si no existe el atributo, devuelve NULL
+
+// CREAR
+$("tabla").setAttribute("tamaño", "chico"); // se le pasa el nombre del atributo y luego el string del valor (chequear en los elementos de la consola el nuevoatributo)
+
+// ELIMINAR
+$("tabla").removeAttribute("tamaño");
+
+
+
+// Si tengo que añadir filas (líneas de una base de datos), se le puede añadir id's por cada uno (correspondiente a cada fila de la BD):
+// filaEncabezado.setAttribute("idObjeto", "id_de_la_base_de_datos")
+filaEncabezado.setAttribute("idObjeto", "123654")
+/* 
+    Y por ejemplo, puedo entonces abrir un formulario por cada fila (del html), luego editar 
+    el objeto, y cuando guarde, se dispare un evento con el ID del que trabajé para que luego haga esa edición en la BD 
+*/
+
+
+
+

@@ -1,0 +1,56 @@
+body {
+    background: rgb(113,255,178);
+    background: linear-gradient(146deg, rgba(113,255,178,1) 0%, rgba(13,159,80,1) 47%, rgba(0,212,255,1) 100%);
+    background-attachment: fixed;
+}
+
+table {
+    background-color: white;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(147,255,145,1) 100%);
+    border-radius: 5px;
+    border: none;
+}
+
+button, select{
+    cursor: pointer;
+}
+
+#formDatos, #formAbm{
+    background: radial-gradient(circle, rgba(80, 80, 80, 0.432) 0%, rgba(255,255,255,0) 100%);
+    box-shadow: 13px 9px 9px 0px rgba(0,0,0,0.75);
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#divDatos/* , #divAbm */{
+    display:flex;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.blocked {
+  pointer-events: none;
+  user-select: none;
+  background-color: #efefef;
+  color: #636363;
+  border: 1px solid hwb(0 72% 28%);
+  border-radius: 2px;
+}
+
+.blur {
+    filter: blur(2px);
+}
+
+.custom-spinner {
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:conic-gradient(#0000 10%,#766DF4);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation:s3 1s infinite linear;
+}
+@keyframes s3 {to{transform: rotate(1turn)}}
