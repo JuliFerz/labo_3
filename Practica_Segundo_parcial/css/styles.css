@@ -1,0 +1,88 @@
+body {
+    zoom: 1.5;
+    background: rgb(113,255,178);
+    background: linear-gradient(146deg, rgba(113,255,178,1) 0%, rgba(13,159,80,1) 47%, rgba(0,212,255,1) 100%);
+    background-attachment: fixed;
+}
+
+table {
+    background-color: white;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(147,255,145,1) 100%);
+    border-radius: 5px;
+    border: none;
+}
+
+button, select{
+    cursor: pointer;
+}
+
+#formDatos, #formAbm{
+    background: radial-gradient(circle, rgba(80, 80, 80, 0.432) 0%, rgba(255,255,255,0) 100%);
+    box-shadow: 13px 9px 9px 0px rgba(0,0,0,0.75);
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#divDatos{
+    display:flex;
+    justify-content: center;
+}
+
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.blocked {
+    pointer-events: none;
+    user-select: none;
+    border-radius: 2px;
+}
+.blocked-color {
+    background-color: #efefef;
+    color: #636363;
+    border: 1px solid hwb(0 72% 28%);
+}
+
+.blur {
+    animation: fadeIn 0.18s ease-in-out;
+    filter: blur(2.3px);
+}
+
+.loader {
+    margin-top: 10%;
+    margin-left: 45%;
+    position: absolute;
+    
+    z-index: 999;
+
+    border: 10px solid #9b9b9b;
+    border-top: 10px solid #766DF4;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 0.8s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from {
+        filter: blur(0px);
+        opacity: 1;
+    }
+    to {
+        filter: blur(2.3px);
+        opacity: 1;
+    }
+}

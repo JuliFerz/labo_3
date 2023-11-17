@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>PP_Vehiculos</title>
+</head>
+
+<body>
+    <div class="loader hidden" id="spinner"></div>
+    <div id="divDatos">
+        <form id="formDatos" class="center">
+            <h1>Formulario Lista</h1>
+
+            <table border="1" id="tablaPersonas">
+                <thead id="headPersonas">
+                    <tr>
+                        <th class="id">ID</th>
+                        <th class="nombre">Nombre</th>
+                        <th class="apellido">Apellido</th>
+                        <th class="edad">Edad</th>
+                        <th class="compras">Compras</th>
+                        <th class="telefono">Telefono</th>
+                        <th class="sueldo">Sueldo</th>
+                        <th class="ventas">Ventas</th>
+                        <th class="modificar">Modificar</th>
+                        <th class="borrar">Borrar</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyPersonas"></tbody>
+            </table>
+            <button type="button" id="agregarUsuario">Agregar elemento</button>
+        </form>
+
+        <form class="hidden center" id="formAbm">
+            <h1 id="tituloAbm">Formulario Agregar</h1>
+            <span>Tipo: </span>
+            <select id="tipoPersonaABM">
+                <option value=""></option>
+                <option value="empleado" id="opcionEmpleado">Empleado</option>
+                <option value="cliente" id="opcionCliente">Cliente</option>
+            </select><br>
+
+            <div class="abmUsuario hidden">
+                <span>ID: </span><br>
+                <input type="number" class="abmDato blocked blocked-color" id="idAbm"><br>
+
+                <span>Nombre: </span><br>
+                <input type="text" class="abmDato" id="nombreAbm" value=""><br>
+
+                <span>Apellido: </span><br>
+                <input type="text" class="abmDato" id="apellidoAbm" value=""><br>
+
+                <span>Edad: </span><br>
+                <input type="number" class="abmDato" id="edadAbm" value=""><br>
+            </div>
+
+            <div class="cliente hidden">
+                <span>Compras: </span><br>
+                <input type="number" class="abmDato" id="comprasAbm" value=""><br>
+
+                <span>Telefono: </span><br>
+                <input type="number" class="abmDato" id="telefonoAbm" value=""><br>
+            </div>
+            <div class="empleado hidden">
+                <span>Sueldo: </span><br>
+                <input type="number" class="abmDato" id="sueldoAbm" value=""><br>
+
+                <span>Ventas: </span><br>
+                <input type="number" class="abmDato" id="ventasAbm" value=""><br>
+            </div>
+            <div class="abmTextoDefault">
+                <br>
+                <span>Elija un tipo...</span>
+            </div>
+            <div>
+                <button type="button" value="editar" id="editarAbm" class="hidden">Editar</button>
+                <button type="submit" value="aceptar" id="aceptarAbm">Aceptar</button>
+                <button type="button" value="eliminar" id="eliminarAbm" class="hidden">Eliminar</button>
+                <button type="button" value="cancelar" id="cancelarAbm">Cancelar</button>
+            </div>
+                
+        </form>
+    </div>
+    <script type="module" src="js/main.js" defer></script>
+</body>
+
+</html>
