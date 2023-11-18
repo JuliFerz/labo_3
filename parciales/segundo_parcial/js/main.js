@@ -172,6 +172,26 @@ function alternarForms(id, columnHeader) {
         opcionProfesional.selected = false;
         tipoPersonaAbm.classList.remove('blocked')
         tipoPersonaAbm.classList.remove('blocked-color')
+
+        objUsuario.nombre.classList.remove('blocked');
+        objUsuario.apellido.classList.remove('blocked');
+        objUsuario.edad.classList.remove('blocked');
+        objUsuario.equipo.classList.remove('blocked');
+        objUsuario.posicion.classList.remove('blocked');
+        objUsuario.cantidadGoles.classList.remove('blocked');
+        objUsuario.titulo.classList.remove('blocked');
+        objUsuario.facultad.classList.remove('blocked');
+        objUsuario.anioGraduacion.classList.remove('blocked');
+
+        objUsuario.nombre.classList.remove('blocked-color');
+        objUsuario.apellido.classList.remove('blocked-color');
+        objUsuario.edad.classList.remove('blocked-color');
+        objUsuario.equipo.classList.remove('blocked-color');
+        objUsuario.posicion.classList.remove('blocked-color');
+        objUsuario.cantidadGoles.classList.remove('blocked-color');
+        objUsuario.titulo.classList.remove('blocked-color');
+        objUsuario.facultad.classList.remove('blocked-color');
+        objUsuario.anioGraduacion.classList.remove('blocked-color');
     }
 
 }
