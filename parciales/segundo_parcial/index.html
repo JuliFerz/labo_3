@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>SP_Julian_Fernandez</title>
+</head>
+
+<body>
+    <div class="loader hidden" id="spinner"></div>
+    <div id="divDatos">
+        <form id="formDatos" class="center">
+            <h1>Formulario Lista</h1>
+
+            <table border="1" id="tablaPersonas">
+                <thead id="headPersonas">
+                    <tr>
+                        <th class="id">ID</th>
+                        <th class="nombre">Nombre</th>
+                        <th class="apellido">Apellido</th>
+                        <th class="edad">Edad</th>
+                        <th class="equipo">Equipo</th>
+                        <th class="posicion">Posicion</th>
+                        <th class="cantidadGoles">CantidadGoles</th>
+                        <th class="titulo">Titulo</th>
+                        <th class="facultad">Facultad</th>
+                        <th class="anioGraduacion">AñoGrad.</th>
+                        <th class="modificar">Modificar</th>
+                        <th class="borrar">Borrar</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyPersonas"></tbody>
+            </table>
+            <button type="button" id="agregarUsuario">Agregar elemento</button>
+        </form>
+
+        <form class="hidden center" id="formAbm">
+            <h1 id="tituloAbm">Formulario Agregar</h1>
+            <span>Tipo: </span>
+            <select id="tipoPersonaABM">
+                <option value=""></option>
+                <option value="futbolista" id="opcionFutbolista">Futbolista</option>
+                <option value="profesional" id="opcionProfesional">Profesional</option>
+            </select><br>
+
+            <div class="abmUsuario hidden">
+                <span>ID: </span><br>
+                <input type="number" class="abmDato blocked blocked-color" id="idAbm"><br>
+
+                <span>Nombre: </span><br>
+                <input type="text" class="abmDato" id="nombreAbm" value=""><br>
+
+                <span>Apellido: </span><br>
+                <input type="text" class="abmDato" id="apellidoAbm" value=""><br>
+
+                <span>Edad: </span><br>
+                <input type="number" class="abmDato" id="edadAbm" value=""><br>
+            </div>
+
+            <div class="futbolista hidden">
+                <span>Equipo: </span><br>
+                <input type="text" class="abmDato" id="equipoAbm" value=""><br>
+
+                <span>Posicion: </span><br>
+                <input type="text" class="abmDato" id="posicionAbm" value=""><br>
+
+                <span>Cantidad goles: </span><br>
+                <input type="number" class="abmDato" id="cantidadGolesAbm" value=""><br>
+            </div>
+            <div class="profesional hidden">
+                <span>Titulo: </span><br>
+                <input type="text" class="abmDato" id="tituloUniAbm" value=""><br>
+
+                <span>Facultad: </span><br>
+                <input type="text" class="abmDato" id="facultadAbm" value=""><br>
+
+                <span>Año graduacion: </span><br>
+                <input type="number" class="abmDato" id="anioGraduacionAbm" value=""><br>
+            </div>
+            <div class="abmTextoDefault">
+                <br>
+                <span>Elija un tipo...</span>
+            </div>
+            <div>
+                <button type="button" value="editar" id="editarAbm" class="hidden">Editar</button>
+                <button type="submit" value="aceptar" id="aceptarAbm">Aceptar</button>
+                <button type="button" value="eliminar" id="eliminarAbm" class="hidden">Eliminar</button>
+                <button type="button" value="cancelar" id="cancelarAbm">Cancelar</button>
+            </div>
+
+        </form>
+    </div>
+    <script type="module" src="js/main.js" defer></script>
+</body>
+
+</html>
